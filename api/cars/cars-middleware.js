@@ -1,15 +1,38 @@
-const checkCarId = (req, res, next) => {
-  // DO YOUR MAGIC
-}
+const checkCarId = async (req, res, next) => {
+  try {
+    return await res.json();
+  } catch (err) {
+    next(err);
+  }
+};
 
-const checkCarPayload = (req, res, next) => {
-  // DO YOUR MAGIC
-}
+const checkCarPayload = async (req, res, next) => {
+  try {
+    return await res.json();
+  } catch (err) {
+    next(err);
+  }
+};
 
-const checkVinNumberValid = (req, res, next) => {
-  // DO YOUR MAGIC
-}
+const checkVinNumberValid = async (req, res, next) => {
+  try {
+    return await res.json();
+  } catch (err) {
+    next(err);
+  }
+};
 
-const checkVinNumberUnique = (req, res, next) => {
-  // DO YOUR MAGIC
-}
+const checkVinNumberUnique = async (req, res, next) => {
+  try {
+    return await res.json();
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = {
+  checkCarId,
+  checkCarPayload,
+  checkVinNumberValid,
+  checkVinNumberUnique,
+};

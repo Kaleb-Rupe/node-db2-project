@@ -1,11 +1,27 @@
+const knex = require("knex");
+
+const db = knex({
+  client: "sqlite3",
+  connection: {
+    filename: "./data/db-config.js",
+  },
+  useNullAsDefault: true,
+});
+
 const getAll = () => {
-  // DO YOUR MAGIC
-}
+  return db("getAll");
+};
 
 const getById = () => {
-  // DO YOUR MAGIC
-}
+  return db("getById");
+};
 
 const create = () => {
-  // DO YOUR MAGIC
-}
+  return db("create");
+};
+
+module.exports = {
+  getAll,
+  getById,
+  create,
+};
