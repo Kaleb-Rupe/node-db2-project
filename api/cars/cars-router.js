@@ -1,9 +1,11 @@
-const Cars = require("./cars-model");
-const router = require("express").Router();
+const express = require("express");
+const Car = require("./cars-model");
+
+const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const cars = await Cars.getAll("cars", cars);
+    const cars = await Car.getAll();
     res.json(cars);
   } catch (err) {
     next(err);
@@ -12,7 +14,7 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const car = await Cars.getById(req.parama.id);
+    const car = await Car.getById(req.parama.id);
     res.json(car);
   } catch (err) {
     next(err);
@@ -21,7 +23,7 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   try {
-    const car = await Cars.create(req.body);
+    const car = await Car.create(req.body);
     res.json(car);
   } catch (err) {
     next(err);
