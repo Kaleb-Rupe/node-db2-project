@@ -1,19 +1,11 @@
-const knex = require("knex");
-
-const db = knex({
-  client: "sqlite3",
-  connection: {
-    filename: "./data/db-config.js",
-  },
-  useNullAsDefault: true,
-});
+const db = require("../../data/db-config");
 
 const getAll = () => {
-  return db("getAll");
+  return db("cars");
 };
 
-const getById = () => {
-  return db("getById");
+const getById = (id) => {
+  return db("cars").where("id", id).first();
 };
 
 const create = () => {
